@@ -3,7 +3,7 @@ const apiRoutes = require("./routes/api")
 const htmlRoutes = require("./routes/view")
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8090;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
