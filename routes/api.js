@@ -4,15 +4,15 @@ const notes = require("../db/notes");
 //Create 3 routes Get, POST, Delete
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../db/notes.js"))
+    res.sendFile(path.join(__dirname, "../db/notes"))
 });
 
-app.post("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "./db/db.json"))
+app.post("/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "../db/notes"))
 })
 
-app.delete("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../db/notes.js"))
+app.delete("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "../db/notes"))
 })
 
 module.exports = router;
