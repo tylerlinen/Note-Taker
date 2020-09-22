@@ -37,5 +37,12 @@ class Notes{
         }
         const newNote = {title,text,id: uuidv4()}
 
+        return this.getnotes().then(NotesArray => [...NotesArray, newNote]).then(UpdatedNotes => this.write(UpdatedNotes)).then(() => newNote)
+    }
+
+    deletenote(id){
+        return this.getnotes().then(NotesArray => NotesArray.filter(note => note.id !== id)).then(filteredArray => this.write(filteredArray))
     }
 }
+
+module.exports = new Notes();
